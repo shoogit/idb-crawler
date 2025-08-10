@@ -11,6 +11,7 @@ permissions:
 jobs:
   crawl:
     runs-on: ubuntu-latest
+
     steps:
       - name: "Checkout"
         uses: actions/checkout@v4
@@ -24,9 +25,13 @@ jobs:
         shell: bash
         run: |
           npm ci || npm install
-          npm install playwright
 
-      - name: "Install Playwright (browsers & deps)"
+      - name: "Show Playwright version (sanity)"
+        shell: bash
+        run: |
+          npx playwright --version || true
+
+      - name: "Install Playwright (browsers & Linux deps)"
         shell: bash
         run: |
           npx playwright install --with-deps
