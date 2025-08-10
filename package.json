@@ -21,7 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "csv-parse": "^5.5.5",
-    "playwright": "^1.47.2"
+    "playwright": "^1.54.2"
   },
   "devDependencies": {
     "prettier": "^3.3.3"
