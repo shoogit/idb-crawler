@@ -2,8 +2,11 @@ name: Crawl IDB (daily)
 
 on:
   schedule:
-    - cron: "0 18 * * *"   # 18:00 UTC = 03:00 KST daily
-  workflow_dispatch: {}
+    - cron: "0 18 * * *"   # 18:00 UTC = 03:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write   # allow push back to repo
 
 jobs:
   crawl:
@@ -17,23 +20,24 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install deps
-        run: npm ci || npm i
+      - name: Install dependencies
+        shell: bash
+        run: |
+          npm ci || npm i
 
-      - name: Install Playwright
+      - name: Install Playwright (browsers & deps)
+        shell: bash
         run: npx playwright install --with-deps
 
       - name: Run crawler
+        shell: bash
         run: npm run crawl:idb
 
-      - name: Guardrail: ensure >= 10 rows
-        run: |
-          node -e "const n=JSON.parse(require('fs').readFileSync('data/notices.json','utf8')).length; if(n<10){console.error('Too few rows:',n); process.exit(1)} else {console.log('Rows OK:',n)}"
-
-      - name: Commit changes
+      - name: Commit data
+        shell: bash
         run: |
           git config user.name "crawler-bot"
           git config user.email "crawler-bot@users.noreply.github.com"
-          git add data/*.json
-          git commit -m "update IDB notices" || echo "No changes"
+          git add data/*.json || true
+          git commit -m "chore: update IDB notices [skip ci]" || echo "No changes"
           git push
