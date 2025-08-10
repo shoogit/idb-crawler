@@ -3,7 +3,7 @@ name: Crawl IDB (daily)
 on:
   schedule:
     - cron: "0 18 * * *"   # 18:00 UTC = 03:00 KST
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -12,34 +12,36 @@ jobs:
   crawl:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: "Checkout"
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: "Setup Node"
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Install dependencies
+      - name: "Install dependencies"
         shell: bash
         run: |
           npm ci || npm install
           npm install playwright
 
-      - name: Install Playwright (browsers & deps)
+      - name: "Install Playwright (browsers & deps)"
         shell: bash
-        run: npx playwright install --with-deps
+        run: |
+          npx playwright install --with-deps
 
-      - name: Run crawler
+      - name: "Run crawler"
         shell: bash
-        run: npm run crawl:idb
+        run: |
+          npm run crawl:idb
 
-      - name: Guardrail: ensure >= 10 rows
+      - name: "Guardrail ensure >= 10 rows"
         shell: bash
         run: |
           node -e "const n=JSON.parse(require('fs').readFileSync('data/notices.json','utf8')).length; if(n<10){console.error('Too few rows:',n); process.exit(1)} else {console.log('Rows OK:',n)}"
 
-      - name: Commit data
+      - name: "Commit data"
         shell: bash
         run: |
           git config user.name "crawler-bot"
