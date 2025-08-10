@@ -1,0 +1,29 @@
+{
+  "name": "idb-crawler",
+  "version": "1.0.0",
+  "description": "Scraper for IDB procurement notices",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "crawl:idb": "node scripts/idb_export_to_json.mjs",
+    "crawl:debug": "PWDEBUG=1 node scripts/idb_export_to_json.mjs",
+    "crawl:all": "npm run crawl:idb",
+    "format": "npx prettier --write ."
+  },
+  "keywords": [
+    "playwright",
+    "scraper",
+    "idb",
+    "procurement",
+    "mdb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.5.5",
+    "playwright": "^1.47.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
