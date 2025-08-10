@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # allow push back to repo
+  contents: write
 
 jobs:
   crawl:
@@ -23,7 +23,8 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: |
-          npm ci || npm i
+          npm ci || npm install
+          npm install playwright
 
       - name: Install Playwright (browsers & deps)
         shell: bash
@@ -32,6 +33,11 @@ jobs:
       - name: Run crawler
         shell: bash
         run: npm run crawl:idb
+
+      - name: Guardrail: ensure >= 10 rows
+        shell: bash
+        run: |
+          node -e "const n=JSON.parse(require('fs').readFileSync('data/notices.json','utf8')).length; if(n<10){console.error('Too few rows:',n); process.exit(1)} else {console.log('Rows OK:',n)}"
 
       - name: Commit data
         shell: bash
