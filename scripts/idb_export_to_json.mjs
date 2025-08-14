@@ -1,8 +1,21 @@
-// scripts/idb_export_to_json.mjs  (v7 — Patch A: header mapping + robust dates)
+// scripts/idb_export_to_json.mjs  (v8: verbose logs + hard timeout + header/date fixes)
 import { chromium } from "playwright";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+
+/** ==================== RUNTIME FLAGS ==================== **/
+const VERBOSE = process.env.VERBOSE === "1" || process.argv.includes("--verbose");
+const HEADFUL = process.env.HEADFUL === "1" || process.argv.includes("--headful"); // optional
+
+const ABORT_AFTER_MS = 120000; // 2 minutes hard cap for the whole run
+const abortTimer = setTimeout(() => {
+  console.error("[fatal] Aborting after timeout with no result.");
+  process.exit(1);
+}, ABORT_AFTER_MS);
+
+const log  = (...a) => { if (VERBOSE) console.log("[info]", ...a); };
+const warn = (...a) => console.warn("[warn]", ...a);
 
 /** ==================== CONFIG ==================== **/
 const PAGE_URL   = "https://projectprocurement.iadb.org/en/procurement-notices";
@@ -11,9 +24,9 @@ const OUT_DIR    = path.resolve("data");
 const DEBUG_DIR  = path.resolve("debug");
 
 // If your machine/browser is slow, bump these
-const PAGE_LOAD_WAIT_MS   = 5000;   // initial wait after goto
-const GRID_WAIT_TIMEOUTMS = 30000;  // wait until grid appears
-const RETRIES             = 3;      // whole-parse attempts
+let PAGE_LOAD_WAIT_MS   = 8000;   // initial wait after goto
+let GRID_WAIT_TIMEOUTMS = 45000;  // wait until grid appears
+let RETRIES             = 4;      // whole-parse attempts
 
 /** ==================== SETUP ==================== **/
 fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -23,7 +36,7 @@ const sleep  = (ms) => new Promise(r => setTimeout(r, ms));
 const sha256 = (s)  => crypto.createHash("sha256").update(s).digest("hex");
 
 /** ==================== UTILS ==================== **/
-// Robust date parser for DD/MM/YYYY, MM/DD/YYYY, YYYY/MM/DD and variants
+// Robust date parser: DD/MM/YYYY, MM/DD/YYYY, YYYY/MM/DD and variants
 function toISO(raw){
   if(!raw) return null;
   const s = String(raw).trim().replace(/[.]/g,"/").replace(/-/g,"/");
@@ -71,7 +84,7 @@ function headerPick(row, ...keys){
 // Map raw Power BI rows to our normalized schema
 function normalizeRows(rows){
   return rows.map(r=>{
-    // Match the labels you reported from the Power BI table
+    // Match the labels as seen in the Power BI table
     const title       = headerPick(r, "Notice Title", "Title");
     const url         = headerPick(r, "URL", "Link", "Notice URL");
     const countryName = headerPick(r, "Country");
@@ -131,9 +144,11 @@ function dedupeByIdHash(arr){ const m=new Map(); for(const n of arr){ const k=`$
 
 /** ==================== POWER BI HELPERS ==================== **/
 async function getPowerBIFrame(page){
+  log("locating Power BI iframe via CSS…");
   const handle = await page.$(IFRAME_CSS).catch(()=>null);
-  if(handle){ const f = await handle.contentFrame(); if(f) return f; }
-  for(const f of page.frames()){ if(f.url().includes("app.powerbi.com")) return f; }
+  if(handle){ const f = await handle.contentFrame(); if(f){ log("iframe via CSS found."); return f; } }
+  log("fallback: scanning all frames for app.powerbi.com…");
+  for(const f of page.frames()){ if(f.url().includes("app.powerbi.com")){ log("iframe via frame-list found."); return f; } }
   return null;
 }
 
@@ -167,6 +182,7 @@ async function parseAccessibleTable(rootFrame){
 
   for(let i=0;i<frames.length;i++){
     const fr = frames[i];
+    log(`parse: probing frame ${i+1}/${frames.length}…`);
     await nudgeRender(fr);
 
     try{
@@ -197,36 +213,48 @@ async function parseAccessibleTable(rootFrame){
       }
 
       if(recs.length) {
-        // One-time header sample for verification
-        console.log("HEADERS SAMPLE:", Object.keys(recs[0]));
+        console.log("HEADERS SAMPLE:", Object.keys(recs[0])); // one-time header sample for you
+        log("parsed rows from this frame:", recs.length);
         return recs;
       }
 
       // Debug per-frame if nothing parsed
-      await fr.page().screenshot({ path: path.join(DEBUG_DIR, `fallback-grid-${i}.png`), fullPage:true }).catch(()=>{});
-    }catch{}
+      try {
+        const pth = path.join(DEBUG_DIR, `fallback-grid-${i}.png`);
+        await fr.page().screenshot({ path: pth, fullPage:true });
+        warn("no rows parsed in frame", i, "- saved screenshot:", pth);
+      } catch {}
+    }catch(e){
+      warn("frame parse error:", e?.message || e);
+    }
   }
   return [];
 }
 
 /** ==================== MAIN ==================== **/
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  log("Launching browser… headless =", !HEADFUL);
+  const browser = await chromium.launch({ headless: !HEADFUL });
   const context = await browser.newContext({
     locale: 'en-US',
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
   });
   const page = await context.newPage();
 
+  log("goto:", PAGE_URL);
   await page.goto(PAGE_URL, { waitUntil: "domcontentloaded", timeout: 60000 });
+  log("sleep initial", PAGE_LOAD_WAIT_MS, "ms");
   await sleep(PAGE_LOAD_WAIT_MS);
 
   const powerBI = await getPowerBIFrame(page);
   if(!powerBI) throw new Error("Power BI iframe not found (embed may be slow)");
+  log("iframe ready. waiting for grid…");
 
   let rawRows = [];
   for (let attempt = 1; attempt <= RETRIES; attempt++) {
+    log(`grid wait attempt ${attempt}/${RETRIES}…`);
     const ready = await waitForPowerBiGrid(powerBI, GRID_WAIT_TIMEOUTMS);
+    log("grid ready?", ready);
     if (!ready) {
       if (attempt === RETRIES) throw new Error("Power BI grid not visible after waiting");
       await sleep(1500 * attempt);
@@ -234,6 +262,7 @@ async function parseAccessibleTable(rootFrame){
     }
 
     rawRows = await parseAccessibleTable(powerBI);
+    log("rows parsed:", rawRows.length);
     if (rawRows.length) break;
 
     if (attempt < RETRIES) await sleep(1500 * attempt);
@@ -243,7 +272,13 @@ async function parseAccessibleTable(rootFrame){
   const today = new Date().toISOString().slice(0,10);
   fs.writeFileSync(path.join(OUT_DIR, "notices.json"), JSON.stringify(notices,null,2));
   fs.writeFileSync(path.join(OUT_DIR, `notices-${today}.json`), JSON.stringify(notices,null,2));
+
+  clearTimeout(abortTimer);
   console.log(`OK: ${notices.length} notices → ${path.join("data","notices.json")}`);
 
   await browser.close();
-})().catch(e => { console.error(e); process.exit(1); });
+})().catch(e => {
+  clearTimeout(abortTimer);
+  console.error(e);
+  process.exit(1);
+});
