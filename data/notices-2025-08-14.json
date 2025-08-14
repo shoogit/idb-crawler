@@ -18,8 +18,8 @@
     "noticeType": "EOI",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-12",
-    "deadline": "2025-09-02",
+    "publicationDate": "2025-08-13",
+    "deadline": "2025-09-03",
     "buyer": null,
     "city": null,
     "language": [
@@ -27,8 +27,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.025Z",
-    "hash": "ca7a5f874d90903346e47a5b965547a14debfba1af407b4530661226ac5b7ff7"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "7c683e8e0b09efc54cb95bb551abbf8f6647dd93b7ac1b6ffd3dd504d6f6d6f3"
   },
   {
     "id": "IDB:b5ef3e960072da4b",
@@ -49,8 +49,8 @@
     "noticeType": "EOI",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-12",
-    "deadline": "2025-08-24",
+    "publicationDate": "2025-08-13",
+    "deadline": "2025-08-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -58,8 +58,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "fb2d093f46b716f859396feb3905eac0477a85c796e7a4773ccef7b13cfe91e2"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "2ce7880287291abfcae581622f43907af723d60939614b4474fcca63974541f8"
   },
   {
     "id": "IDB:ef49f1667b7fc222",
@@ -80,8 +80,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-12",
-    "deadline": "2025-08-24",
+    "publicationDate": "2025-08-13",
+    "deadline": "2025-08-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -89,8 +89,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "da9384ef0309522c1ecf9b328f1af6d320cd5515581b012c3a4c6c8bb911d067"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "b0f4b6373dc151aaf29b74bd42b5b4a62daa95cd6337bd236cbc2004d2b87c1b"
   },
   {
     "id": "IDB:593da80570e22bdf",
@@ -111,8 +111,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-12",
-    "deadline": "2025-08-24",
+    "publicationDate": "2025-08-13",
+    "deadline": "2025-08-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -120,8 +120,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "33836328ce8cdfedcee67e611bbd7f866aac686177e3b453471c062ac3ad1099"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "f83040c7a428328fadae7ab3b12d6b862f86bb1b0ffc4f572553cbd809016278"
   },
   {
     "id": "IDB:dacce2fbfb09739e",
@@ -142,8 +142,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-11",
-    "deadline": "2025-08-20",
+    "publicationDate": "2025-08-12",
+    "deadline": "2025-08-21",
     "buyer": null,
     "city": null,
     "language": [
@@ -151,8 +151,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "a4c6a69064492ff9019de14c8be639f34874fe0150be4e1240360e18d72f4773"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "81c838e7d495c7648e3803a594eddacfd47371f47781322a1e3c47a1c020dae3"
   },
   {
     "id": "IDB:bf963b04e45986f2",
@@ -173,8 +173,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-11",
-    "deadline": "2025-09-02",
+    "publicationDate": "2025-08-12",
+    "deadline": "2025-09-03",
     "buyer": null,
     "city": null,
     "language": [
@@ -182,8 +182,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "78827c4ef3037af5022ad4b447f99a3623bb347cf780be92fce6a8b962753a75"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "6a4aba434746abdc5e2c1a70052c4c12f753670d51363276ddc959a2a2331e53"
   },
   {
     "id": "IDB:fc0dae250e7965a5",
@@ -204,8 +204,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-11",
-    "deadline": "2025-09-09",
+    "publicationDate": "2025-08-12",
+    "deadline": "2025-09-10",
     "buyer": null,
     "city": null,
     "language": [
@@ -213,8 +213,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "98331e33fa1172cdadd655951f04f31c61e11fb62fa8850ecedce1749e9d15d9"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "4a72ea5e947f0fc7fe8d331e7088bd4476f5729375bdc2a5c0743469f1d7544d"
   },
   {
     "id": "IDB:2a4dd664605e5e68",
@@ -235,8 +235,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-11",
-    "deadline": "2025-09-28",
+    "publicationDate": "2025-08-12",
+    "deadline": "2025-09-29",
     "buyer": null,
     "city": null,
     "language": [
@@ -244,8 +244,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "41ad56657efcd04141bacb1f127431f77cc0aac898e604b2828b4b255894afd5"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "966a729f3ba03589df26d6a4fc16edf77058faa2bddf0b41cf81155e2480f75a"
   },
   {
     "id": "IDB:f7d38370e7103db1",
@@ -266,8 +266,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-11",
-    "deadline": "2025-08-17",
+    "publicationDate": "2025-08-12",
+    "deadline": "2025-08-18",
     "buyer": null,
     "city": null,
     "language": [
@@ -275,8 +275,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "8f5116a0f05ca4b5620cab139abedbc6d9129123fae12220e59d3ea95440034d"
+    "lastSeenAt": "2025-08-14T18:57:34.528Z",
+    "hash": "675d3f9bd3d7de89cf9f93ccdc02e3ef88e41d3e11a8304b15cfe221f6624876"
   },
   {
     "id": "IDB:1b9b519c5c02668c",
@@ -297,8 +297,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-11",
-    "deadline": "2025-08-21",
+    "publicationDate": "2025-08-12",
+    "deadline": "2025-08-22",
     "buyer": null,
     "city": null,
     "language": [
@@ -306,8 +306,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
-    "hash": "4651599d93baac7d9e44bc5553860e38ce00d8626e6d4feb55e56d1ac9940d44"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "4e6d6963decd6a3208fbf85fea17ac84664501dfdf0f79ddb4b37c0cb5cfac20"
   },
   {
     "id": "IDB:94ffa35abce341a7",
@@ -328,7 +328,7 @@
     "noticeType": "Award",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
+    "publicationDate": "2025-08-11",
     "deadline": null,
     "buyer": null,
     "city": null,
@@ -337,7 +337,7 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
     "hash": "934809e4955b47426936cc09857cb2fd03d0def735984506edbd117ea672b0bc"
   },
   {
@@ -359,7 +359,7 @@
     "noticeType": "Award",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
+    "publicationDate": "2025-08-11",
     "deadline": null,
     "buyer": null,
     "city": null,
@@ -368,7 +368,7 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.026Z",
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
     "hash": "e3d8e6422d2cedf9469248b787cc1b77f163abe4ad6467130bd63bb88853f504"
   },
   {
@@ -390,8 +390,8 @@
     "noticeType": "EOI",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-08-24",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-08-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -399,8 +399,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "b0a36c22ea18149dcc9903cd179666eb6c7812e2b709629a2e8495adc0696e24"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "8638bba7dd61e7a01f6bb6ffa3ca5fd71bd00680aaf8d73411d1a6b18b0ec049"
   },
   {
     "id": "IDB:fe857403d18f3501",
@@ -421,8 +421,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-08-18",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-08-19",
     "buyer": null,
     "city": null,
     "language": [
@@ -430,8 +430,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "6898b326b082839d33f9531b13e00dfb8f3d91b3e80620b61aae60139ce7fa48"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "456b23d247437e3b8cd6a3996c1ae2964c553be4c09bda8803872c16110b10f7"
   },
   {
     "id": "IDB:9cefa67ecb92fe2b",
@@ -452,8 +452,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-09-24",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-09-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -461,8 +461,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "e4b9e9c85e949bb3ef4b8b4cde2d5d6c65885b9b52d9bcb5c1c3397de0f78422"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "e0d117c2d4e31c3078a6f4e8d17c62fde3e4cae80766d5fcb321098e0f639548"
   },
   {
     "id": "IDB:258e656ec88ea2ac",
@@ -483,8 +483,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-08-24",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-08-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -492,8 +492,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "ac31198197e23376cf551040ade39e98fb11e4819e82972cca47fdc3bff3413e"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "6824ba0aaa1684c64d1fa26b3f8679cc4b1e86f32b6e3b14257bbef0211a5945"
   },
   {
     "id": "IDB:d2cb3b52005786ed",
@@ -514,8 +514,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-08-24",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-08-25",
     "buyer": null,
     "city": null,
     "language": [
@@ -523,8 +523,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "1a4ea6d05aa113832aa07b677b33008448bf3cded3a17e9ef3d616857cf83804"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "302604df497dd7a4b23bf040474a78730e39733be66b943623fa94c7ac950e68"
   },
   {
     "id": "IDB:8dc7407cd8862063",
@@ -545,8 +545,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-08-11",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-08-12",
     "buyer": null,
     "city": null,
     "language": [
@@ -554,8 +554,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "78e9f47c3730c438c394ee485135082d716ba48f9a7f6413a3df38ecc2fd3bf5"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "365449c7427bed11091dd0149749c14ec5ff3e228333e8c81af5502c3a023f75"
   },
   {
     "id": "IDB:f483493081042151",
@@ -576,8 +576,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-09-21",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-09-22",
     "buyer": null,
     "city": null,
     "language": [
@@ -585,8 +585,8 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "c88f9c87bcbadc8fee0554121deed647c253b8878a2a8aca52eb251c6029c19e"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "f685ef2d299f50211ce6cdd951fc7bb99bf7151bb439bb43d36cdd34c55842c2"
   },
   {
     "id": "IDB:8fd99006f35e3c3d",
@@ -607,8 +607,8 @@
     "noticeType": "SPECIFIC",
     "currency": null,
     "budgetEstimate": null,
-    "publicationDate": "2025-08-10",
-    "deadline": "2025-09-04",
+    "publicationDate": "2025-08-11",
+    "deadline": "2025-09-05",
     "buyer": null,
     "city": null,
     "language": [
@@ -616,7 +616,7 @@
     ],
     "url": "https://projectprocurement.iadb.org/en/procurement-notices",
     "documents": [],
-    "lastSeenAt": "2025-08-14T14:21:11.027Z",
-    "hash": "f6ad78d0b7bd992125daddba25041f0b9822303c01be76f3f9b0b01c50c9c53f"
+    "lastSeenAt": "2025-08-14T18:57:34.529Z",
+    "hash": "5ef8ccd95eadb6db703763ef706559b6fb22d4a21761f0d727f85e13e7f9b46c"
   }
 ]
