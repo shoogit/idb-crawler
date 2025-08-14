@@ -1,0 +1,21 @@
+﻿# dependencies
+node_modules/
+web/mdb-notices/node_modules/
+
+# build outputs
+dist/
+web/mdb-notices/dist/
+debug/
+
+# editor/OS
+.vscode/
+.DS_Store
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# playwright artifacts
+playwright-report/
+test-results/
